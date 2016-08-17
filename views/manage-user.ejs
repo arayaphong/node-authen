@@ -1,0 +1,23 @@
+<html>
+<head><title>User Management</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-top: 80px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+<strong>id</strong>: <%= user._id %><br>
+<form action="/manage-user" method="post">
+    <label>Name</label>
+    <input type="text" class="form-control" name="name">
+    <input type="text" class="form-control" name="lastName">
+    <input type="text" class="form-control" name="role">
+    <button type="submit" class="btn btn-warning btn-lg">Summit</button>
+</form>
+<strong>email</strong>: <%= user.local.email %><br>
+</body>
+</html>
