@@ -87,6 +87,18 @@ module.exports = function(passport) {
     },
     function(req, email, password, done) { // callback with email and password from our form
 
+        // To test encoding
+        var jwt = require('jwt-simple');
+        var payload = {
+            email: email,
+            password: password
+        };
+        var secret = 'xxx';
+        var token = jwt.encode(payload, secret);
+
+        console.log(token);
+        // TODO: Send token to front for embed to header
+
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
         User.findOne({ 'local.email' :  email }, function(err, user) {
